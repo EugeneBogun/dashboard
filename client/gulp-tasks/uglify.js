@@ -1,90 +1,63 @@
 "use strict";
 (function () {
-    //var gulp = require('gulp'),
-    //    concat = require('gulp-concat'),
-    //    replace = require('gulp-replace-task'),
-    //    templateCache = require('gulp-angular-templatecache'),
-    //    ngAnnotate = require('gulp-ng-annotate'),
-    //    uglify = require('gulp-uglifyjs'),
-    //    clean = require('gulp-clean'),
-    //    argv = require('minimist')(process.argv),
-    //    chmod = require('gulp-chmod');
+    var gulp = require('gulp'),
+        concat = require('gulp-concat'),
+        connect = require('gulp-connect'),
+        templateCache = require('gulp-angular-templatecache'),
+        ngAnnotate = require('gulp-ng-annotate'),
+        uglify = require('gulp-uglify'),
+        //clean = require('gulp-clean'),
+        sourcemaps = require('gulp-sourcemaps');
 
-// gulp watch --API_URL=http://mbugay.dev1.justcoded.com/xpertnews/wp-json
+    gulp.task('js', ['vendors_js', 'app_js']);
 
-    //gulp.task('template_js', ['clean_tmp'], function (done) {
-    //    gulp.src('./templates/**/*.html')
-    //        .pipe(templateCache({standalone: true, root: 'templates/', module: 'feedsyApp.templates'}))
-    //        .pipe(chmod(777))
-    //        .pipe(gulp.dest('./tmp/js'))
-    //        .on('end', done);
-    //});
+    gulp.task('template_js', [], function (done) {
+        gulp.src([
+            './app/controllers/*.html',
+            './app/controllers/**/*.html'
+        ])
+            .pipe(templateCache({standalone: true, root: '/', module: 'app.templates'}))
+            .pipe(gulp.dest('./tmp/js', {overwrite: true}))
+            .pipe(connect.reload())
+            .on('end', done);
+    });
 
     //gulp.task('clean_js', function () {
     //    return gulp.src(['./www/js'], {read: false})
-    //        .pipe(chmod(777))
     //        .pipe(clean());
     //});
 
-    //gulp.task('concat_annotate_js', ['patch', 'clean_js', 'template_js'], function (done) {
-    //
-    //    gulp.src([
-    //        './js/app.js',
-    //        './js/factories/*.js',
-    //        './js/factories.js',
-    //        './js/services/*.js',
-    //        './js/services.js',
-    //        './js/controllers/modal/*.js',
-    //        './js/controllers/*.js',
-    //        './js/controllers.js',
-    //        './js/directives/*.js',
-    //        './js/directives.js',
-    //        './js/filters.js'
-    //    ])
-    //        .pipe(concat('app.js'))
-    //        .pipe(replace({
-    //            patterns: [
-    //                {
-    //                    match: 'appPath',
-    //                    replacement: "com.feedsy." + argv.appPath
-    //                },
-    //                {
-    //                    match: 'appVersion',
-    //                    replacement: require('../version.json').version
-    //                },
-    //                {
-    //                    match: 'apiURL',
-    //                    replacement: argv.apiURL
-    //                },
-    //                {
-    //                    match: 'appName',
-    //                    replacement: argv.appName
-    //                },
-    //                {
-    //                    match: 'appGoogleAnalytics',
-    //                    replacement: argv.appGoogleAnalytics
-    //                },
-    //                {
-    //                    match: 'appGoogleProjectId',
-    //                    replacement: argv.appGoogleProjectId
-    //                },
-    //                {
-    //                    match: 'appPushWooshId',
-    //                    replacement: argv.appPushWooshId
-    //                }
-    //            ]
-    //        }))
-    //        .pipe(ngAnnotate({single_quotes: true}))
-    //        .pipe(gulp.dest('./tmp/js'))
-    //        .on('end', done);
-    //});
+    gulp.task('vendors_js', [], function (done) {
 
+        gulp.src([
+            './bower_components/angular/angular.js',
+            './bower_components/angular-resource/angular-resource.js',
+            './bower_components/angular-route/angular-route.js',
+            './bower_components/angular-sanitize/angular-sanitize.js'
+        ])
+            .pipe(concat('vendors.min.js'))
+            .pipe(uglify())
+            .pipe(gulp.dest('./www/js', {overwrite: true}))
+            .pipe(connect.reload())
+            .on('end', done);
+    });
 
-    //gulp.task('uglify_js', ['concat_annotate_js'], function (done) {
-    //    gulp.src('./tmp/js/*.js')
-    //        .pipe(uglify('common.min.js'))
-    //        .pipe(gulp.dest('./www/js'))
-    //        .on('end', done);
-    //});
+    gulp.task('app_js', ['template_js'], function (done) {
+        gulp.src([
+            './app/app.js',
+            './app/controllers/*.js',
+            './app/controllers/**/*.js',
+            './app/factories/*.js',
+            './tmp/js/templates.js'
+        ])
+            .pipe(concat('app.min.js'))
+            .pipe(ngAnnotate({single_quotes: true}))
+            .pipe(sourcemaps.init())
+            .pipe(uglify())
+            .pipe(sourcemaps.write())
+            .pipe(gulp.dest('./www/js', {overwrite: true}))
+            .pipe(connect.reload())
+            .on('end', done);
+    });
 
 }());

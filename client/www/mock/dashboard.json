@@ -2,23 +2,57 @@
   "items" : [
     {
       "id":1,
-      "email":"test@test.email",
-      "location":"Kiev"
+      "form":"contact-form",
+      "date":"2015-10-25 00:00:00",
+      "title":"Test email 1",
+      "location":"Kiev",
+      "data" : {
+        "phone":"000-00-00",
+        "email":"test@test.email"
+      },
+      "message" : "Test message 1",
+      "ip" : "127.0.0.1",
+      "siteLanguage" : "ru"
     },
     {
       "id":2,
-      "email":"test@test.email",
-      "location":"Kiev"
+      "form":"contact-form",
+      "date":"2015-10-25 00:01:00",
+      "title":"Test email 2",
+      "location":"Kiev",
+      "data" : {
+        "phone":"111-11-11",
+        "email":"test2@test.email"
+      },
+      "message" : "Test message 1",
+      "ip" : "127.0.0.1",
+      "siteLanguage" : "en"
     },
     {
       "id":3,
-      "email":"test@test.email",
-      "location":"Kiev"
+      "form":"contact-form",
+      "date":"2015-10-25 00:02:00",
+      "title":"Test email 3",
+      "location":"Kiev",
+      "data" : {
+        "email":"test3@test.email"
+      },
+      "message" : "Test message 3",
+      "ip" : "127.0.0.1",
+      "siteLanguage" : "ru"
     },
     {
       "id":4,
-      "email":"test@test.email",
-      "location":"Kiev"
+      "form":"contact-form",
+      "date":"2015-10-25 00:03:00",
+      "title":"Test email 4",
+      "location":"Kiev",
+      "data" : {
+        "email":"test4@test.email"
+      },
+      "message" : "Test message 4",
+      "ip" : "127.0.0.1",
+      "siteLanguage" : "en"
     }
   ]
 }

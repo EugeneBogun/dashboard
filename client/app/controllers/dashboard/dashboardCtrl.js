@@ -3,6 +3,6 @@ angular.module("app.controllers.dashboardCtrl", [])
         $log.debug('init dashboardCtrl');
         //$scope.dashboard = dashboard;
         $http.get('/mock/dashboard.json').then(function (response) {
-            $scope.list = response.data.list;
+            $scope.items = response.data.items;
         });
     });

@@ -15,19 +15,14 @@ angular.module('app', [
             .when('/', {
                 templateUrl: '/dashboard/dashboard.html',
                 controller: 'dashboardCtrl'
-                ,
-                resolve: {
-                    data: function () {
-                        //apiFactory.test();
-                        console.log('getDashboard');
-                        return 'test';
-                        //apiFactory.getDashboard();
-                    }
-                }
             })
             .when('/users', {
                 templateUrl: '/users/users.html',
                 controller: 'usersCtrl'
+            })
+            .when('/pages', {
+                templateUrl: '/pages/pages.html',
+                controller: 'pagesCtrl'
             })
             .otherwise({
                 redirectTo: '/'

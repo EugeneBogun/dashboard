@@ -1,3 +1,23 @@
 <div>
     Users
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in items">
+            <td>{{row.id}}</td>
+            <td>{{row.username}}</td>
+            <td>{{row.email}}</td>
+            <td>{{row.role}}</td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
 </div>

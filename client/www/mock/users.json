@@ -1,5 +1,24 @@
 {
-  "items" : [
-
+  "items": [
+    {
+      "id": 1,
+      "username": "Admin",
+      "email": "admin@email.com",
+      "role": "Admin",
+      "authKey": 123456,
+      "passwordHash": "",
+      "passwordResetToken": "",
+      "profile": {}
+    },
+    {
+      "id": 2,
+      "username": "User",
+      "email": "user@email.com",
+      "role": "User",
+      "authKey": 123456,
+      "passwordHash": "",
+      "passwordResetToken": "",
+      "profile": {}
+    }
   ]
 }

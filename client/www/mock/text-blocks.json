@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "id":1,
+      "name":"Block 1",
+      "shortcut":"block-1",
+      "content":[
+        {
+          "language":"en",
+          "content":"Block 1"
+        },
+        {
+          "language":"ru",
+          "content":"Блок 1"
+        }
+      ]
+    },
+    {
+      "id":2,
+      "name":"Block 2",
+      "shortcut":"block-2",
+      "content":[
+        {
+          "language":"en",
+          "content":"Block 2"
+        },
+        {
+          "language":"ru",
+          "content":"Блок 2"
+        }
+      ]
+    },
+    {
+      "id":3,
+      "name":"Block 3",
+      "shortcut":"block-3",
+      "content":[
+        {
+          "language":"en",
+          "content":"Block 3"
+        },
+        {
+          "language":"ru",
+          "content":"Блок 3"
+        }
+      ]
+    },
+    {
+      "id":4,
+      "name":"Block 4",
+      "shortcut":"block-4",
+      "content":[
+        {
+          "language":"en",
+          "content":"Block 4"
+        },
+        {
+          "language":"ru",
+          "content":"Блок 4"
+        }
+      ]
+    }
+  ]
+}

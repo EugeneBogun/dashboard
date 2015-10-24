@@ -28,6 +28,10 @@ angular.module('app', [
                 templateUrl: '/news/news.html',
                 controller: 'newsCtrl'
             })
+            .when('/text-blocks', {
+                templateUrl: '/textBlocks/textBlocks.html',
+                controller: 'textBlocksCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

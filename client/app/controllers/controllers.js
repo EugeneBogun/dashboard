@@ -3,5 +3,6 @@ angular.module("app.controllers", [
     "app.controllers.dashboardCtrl",
     "app.controllers.menuCtrl",
     "app.controllers.usersCtrl",
-    "app.controllers.pagesCtrl"
+    "app.controllers.pagesCtrl",
+    "app.controllers.newsCtrl"
 ]);

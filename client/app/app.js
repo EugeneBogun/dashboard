@@ -24,6 +24,10 @@ angular.module('app', [
                 templateUrl: '/pages/pages.html',
                 controller: 'pagesCtrl'
             })
+            .when('/news', {
+                templateUrl: '/news/news.html',
+                controller: 'newsCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

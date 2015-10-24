@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "id":1,
+      "name":"Admin Email",
+      "shortcut":"admin-email",
+      "type" : "string",
+      "content": "test@tes.ts"
+    },
+    {
+      "id":2,
+      "name":"Vat",
+      "shortcut":"vat",
+      "type" : "number",
+      "content": "8.0"
+    },
+    {
+      "id":3,
+      "name":"Fb group",
+      "shortcut":"fb-group-link",
+      "type" : "url",
+      "content": "https://fb.com/"
+    },
+    {
+      "id":4,
+      "name":"Twitter link",
+      "shortcut":"twitter-link",
+      "type" : "url",
+      "content": "https://twitter.com/"
+    }
+  ]
+}

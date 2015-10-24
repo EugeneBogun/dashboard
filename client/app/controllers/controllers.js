@@ -5,5 +5,6 @@ angular.module("app.controllers", [
     "app.controllers.usersCtrl",
     "app.controllers.pagesCtrl",
     "app.controllers.newsCtrl",
-    "app.controllers.textBlocksCtrl"
+    "app.controllers.textBlocksCtrl",
+    "app.controllers.configsCtrl"
 ]);

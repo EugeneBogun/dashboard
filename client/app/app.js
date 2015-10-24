@@ -32,6 +32,10 @@ angular.module('app', [
                 templateUrl: '/textBlocks/textBlocks.html',
                 controller: 'textBlocksCtrl'
             })
+            .when('/configs', {
+                templateUrl: '/configs/configs.html',
+                controller: 'configsCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

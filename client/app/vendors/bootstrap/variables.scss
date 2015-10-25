@@ -1,0 +1,18 @@
+$white-base: #fff !default;
+
+//=== Inverted navbar
+// Reset inverted navbar basics
+$navbar-inverse-color:                      $white-base;
+$navbar-inverse-bg:                         #337AB7;
+
+// Inverted navbar links
+$navbar-inverse-link-color:                 $white-base;
+$navbar-inverse-link-hover-color:           darken($navbar-inverse-bg, 20%);
+
+// Inverted navbar brand label
+$navbar-inverse-brand-hover-color:          darken($navbar-inverse-bg, 20%);
+
+// Inverted navbar toggle
+$navbar-inverse-toggle-hover-bg:            darken($navbar-inverse-bg, 20%);
+$navbar-inverse-toggle-icon-bar-bg:         $white-base;
+$navbar-inverse-toggle-border-color:        $white-base;

@@ -6,7 +6,7 @@
         templateCache = require('gulp-angular-templatecache'),
         ngAnnotate = require('gulp-ng-annotate'),
         uglify = require('gulp-uglify'),
-        //clean = require('gulp-clean'),
+        clean = require('gulp-clean'),
         sourcemaps = require('gulp-sourcemaps');
 
     gulp.task('js', ['vendors_js', 'app_js']);
@@ -22,12 +22,12 @@
             .on('end', done);
     });
 
-    //gulp.task('clean_js', function () {
-    //    return gulp.src(['./www/js'], {read: false})
-    //        .pipe(clean());
-    //});
+    gulp.task('clean_js', function () {
+        return gulp.src(['./www/js'], {read: false})
+            .pipe(clean());
+    });
 
-    gulp.task('vendors_js', [], function (done) {
+    gulp.task('vendors_js', ['clean_js'], function (done) {
 
         gulp.src([
             './bower_components/angular/angular.js',
@@ -42,7 +42,7 @@
             .on('end', done);
     });
 
-    gulp.task('app_js', ['template_js'], function (done) {
+    gulp.task('app_js', ['template_js', 'clean_js', 'vendors_js'], function (done) {
         gulp.src([
             './app/app.js',
             './app/controllers/*.js',

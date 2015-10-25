@@ -35,6 +35,6 @@
             root: './www'
         });
         gulp.src('./')
-            .pipe(open({uri: 'http://localhost:' + port}));
+            .pipe(open({uri: 'http://192.168.1.2:' + port}));
     });
 }());

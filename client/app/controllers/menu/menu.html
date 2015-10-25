@@ -14,14 +14,14 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Dashboard <span class="sr-only">(current)</span></a></li>
-                <li><a href="/pages">Pages</a></li>
-                <li><a href="/news">News</a></li>
-                <li><a href="/text-blocks">Text blocks</a></li>
+                <li ng-class="getClass('/')"><a href="/">Dashboard <span class="sr-only">(current)</span></a></li>
+                <li ng-class="getClass('/pages')"><a href="/pages">Pages</a></li>
+                <li ng-class="getClass('/news')"><a href="/news">News</a></li>
+                <li ng-class="getClass('/text-blocks')"><a href="/text-blocks">Text blocks</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/configs">Configs</a></li>
-                <li><a href="/users">Users</a></li>
+                <li ng-class="getClass('/configs')"><a href="/configs">Configs</a></li>
+                <li ng-class="getClass('/users')"><a href="/users">Users</a></li>
                 <li><p class="navbar-text">Admin</p></li>
                 <li><a href="/logout">Logout</a></li>
             </ul>

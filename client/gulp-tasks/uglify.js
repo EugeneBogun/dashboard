@@ -11,7 +11,7 @@
 
     gulp.task('js', ['vendors_js', 'app_js']);
 
-    gulp.task('template_js', [], function (done) {
+    gulp.task('template_js', ['vendors_js'], function (done) {
         gulp.src([
             './app/controllers/*.html',
             './app/controllers/**/*.html'
@@ -42,7 +42,7 @@
             .on('end', done);
     });
 
-    gulp.task('app_js', ['template_js', 'clean_js', 'vendors_js'], function (done) {
+    gulp.task('app_js', ['template_js'], function (done) {
         gulp.src([
             './app/app.js',
             './app/controllers/*.js',

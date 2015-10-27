@@ -1,3 +1,3 @@
 angular.module('app.factories', [
-    "app.factories.apiFactory"
+    "app.factories.variableFactory"
 ]);

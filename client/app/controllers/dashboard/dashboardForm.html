@@ -1,0 +1,63 @@
+<div>
+    <ol class="breadcrumb">
+        <li><a href="/">Dashboard</a></li>
+        <li class="active">Update Message: #{{item.id}}</li>
+    </ol>
+    <h1>Update: #{{item.id}}</h1>
+    <form class="form-horizontal" method="post">
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="form">Form</label>
+            <div class="col-sm-5">
+                <input type="text" id="form" class="form-control" value="{{item.form}}" disabled/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="created">Created</label>
+            <div class="col-sm-5">
+                <input type="text" id="created" class="form-control" value="{{item.date}}" disabled/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="title">Title</label>
+            <div class="col-sm-5">
+                <input type="text" id="title" class="form-control" value="{{item.title}}" disabled/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="location">Location</label>
+            <div class="col-sm-5">
+                <input type="text" id="location" class="form-control" value="{{item.location}}" disabled/>
+            </div>
+        </div>
+        <div class="form-group" ng-repeat="(key,row) in item.data">
+            <label class="col-sm-2 control-label" for="{{key}}">{{key}}</label>
+            <div class="col-sm-5">
+                <input type="text" id="{{key}}" class="form-control" value="{{row}}"disabled/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="message">Message</label>
+            <div class="col-sm-5">
+                <textarea id="message" class="form-control" disabled>{{item.message}}</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="ip">Ip</label>
+            <div class="col-sm-5">
+                <input id="ip" class="form-control" value="{{item.ip}}" disabled/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="siteLanguage">Site language</label>
+            <div class="col-sm-5">
+                <input id="siteLanguage" class="form-control" value="{{item.siteLanguage}}" disabled/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <a class="btn btn-primary" href="/">Back</a>
+            </div>
+        </div>
+    </form>
+</div>

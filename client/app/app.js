@@ -16,6 +16,10 @@ angular.module('app', [
                 templateUrl: '/dashboard/dashboard.html',
                 controller: 'dashboardCtrl'
             })
+            .when('/dashboard/update/:id', {
+                templateUrl: '/dashboard/dashboardForm.html',
+                controller: 'dashboardUpdateCtrl'
+            })
             .when('/users', {
                 templateUrl: '/users/users.html',
                 controller: 'usersCtrl'

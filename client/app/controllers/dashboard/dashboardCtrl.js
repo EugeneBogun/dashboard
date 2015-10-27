@@ -1,8 +1,26 @@
 angular.module("app.controllers.dashboardCtrl", [])
-    .controller('dashboardCtrl', function ($scope, $log, $http) {
+    .controller('dashboardCtrl', function ($scope, $log, $http, variableFactory) {
         $log.debug('init dashboardCtrl');
-        //$scope.dashboard = dashboard;
-        $http.get('/mock/dashboard.json').then(function (response) {
+
+        $http.get(variableFactory.apiUrl+'/messages').then(function (response) {
             $scope.items = response.data.items;
+        });
+
+        $scope.deleteItem = function(id) {
+            $log.debug(id);
+            $http.delete(variableFactory.apiUrl + '/messages/' + id).then(function(){
+                $http.get(variableFactory.apiUrl+'/messages').then(function (response) {
+                    $scope.items = response.data.items;
+                });
+            });
+        };
+
+    })
+    .controller('dashboardUpdateCtrl', function ($scope, $log, $http, $routeParams, variableFactory) {
+
+        $log.debug('init dashboardUpdateCtrl');
+
+        $http.get(variableFactory.apiUrl+'/messages/'+$routeParams.id).then(function (response) {
+            $scope.item = response.data;
         });
     });
